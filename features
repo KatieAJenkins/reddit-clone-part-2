@@ -1,0 +1,12 @@
+App has routes with dynamic path segments, configured with clean urls (html5Mode)
+Uses $http and promises well
+App loads data from the server on page load (index page)
+Allows users to create records that appear on the screen without refreshing, and appear the same when refreshing (new records must get the id)
+Allows users to update records that update on the screen without refreshing, and appear the same when refreshing
+Allows users to remove records that disappear from the screen without refreshing, and don't reappear when refreshing
+Deep links should load data the same way as clicking from the index page
+Follows the Angular Style Guide, specifically:
+Services
+Manual Injection Annotation
+Continues the Folder-by-Feature Structure
+Could be ngResource or $http

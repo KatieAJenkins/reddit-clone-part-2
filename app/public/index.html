@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app = "app">
+  <head>
+    <meta charset="utf-8">
+    <title>Reddit Clone</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <base href = "/">
+
+    <!--jQuery-->
+    <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+
+    <!--Bootstrap-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+    <!--CSS-->
+    <link href="css/app.css" rel="stylesheet">
+
+    <!--Angular 1.6-->
+    <script src="/angular/angular.min.js"></script>
+    <script src="/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <script src="/app/app.module.js"></script>
+    <script src="/app/app.config.js"></script>
+
+    <script src="/posts/post.component.js"></script>
+
+    <!--angular-moment-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <!-- load angular-moment -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.9.0/angular-moment.min.js"></script>
+
+  </head>
+  <body>
+  <!-- <h1>She's Alive!</h1> -->
+
+    <ui-view></ui-view>
+
+  </body>
+</html>

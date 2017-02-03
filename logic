@@ -1,0 +1,115 @@
+//questions
+* not styling images per bootstrap
+* do I need abstract route and parent?
+* fix how comments are displayed
+
+
+PROCESS
+//npm install
+//created db dev and test
+//require angular modules
+//everything connected to angular is in public folder
+ (app.us express static will look in that folder)
+ //add node_modules line for express.static(path.join....'node_modules')
+ //go to package.json and look at dependencies. Then make scripts from these. All files will live in node_modules so go into this hidden file to find the location of these folders.
+ //otherwise install what you need (express, pg, angular, etc)
+
+ //add angular module
+ //add ui-router in dependency
+
+//index.html --> //ui router = always ui-view in index.html (<ui-view></ui-view>)
+      //base href = "/"
+
+//npm start - connects the entire app together. Lite-server is just firing up the front end
+
+//create app folder with 1. app.module.js () 2. app.config.js (state ui router/url location and what component they will use info will go here) 3. app.component.js (top most component) 4. app.template.js (where all html on each page will go)
+  //abstract component = will show up everywhere a route is not defined abstract:true
+
+  1. app.module.js - require angular, inject ['ui-router']
+  2. app.component.js - require angular.module ("app), inject http service, function onInit and test that you can connect
+  3. app.template.html - all html that will go on each page goes here
+  4. app.config.js - add .config(config), inject services, insert config function, in function --> add html5 mode (true), add states., add compnents after ui.router
+
+  //add new file scripts to html.index under app.module.js script
+  <script src="/app/app.module.js"></script>
+  <script src="/app/app.config.js"></script>
+  <script src ="/app/app.component.js"></script>
+  <script src = "/app/app.template.js"></script>
+
+//html injection
+Getting setup
+To use hash-style URLs (#!/people1), there's a 4-step process to installing ui-router in your project:
+
+
+#!/peopl1 (hash style URLs) ???? What is this????
+4 steps:
+Include the script tag
+Register the module
+Define a route
+Add <ui-view> to your HTML file
+To use clean URLs (/people/1), there's a 6-step process to installing ui-router in your project:
+
+CLEAN URLS (/people/1)  6 steps:
+Include the script tag
+Register the module
+Define a route
+Add <ui-view> to your HTML file
+Add the <base> tag to your HTML file
+  <base href = "/"> goes in index.html at top of scrips
+Turn on html5Mode ($locationProvider.html5Mode(true) = app.config.js)
+
+https://learn.galvanize.com/content/gSchool/angular-curriculum/master/20%20-%20API%20Integration/80%20-%20Install%20ui-router.md
+
+
+app.component.js <!-- do not need this one either!
+app.template.js <!-- not needed for Reddit Clone.  Can just have everything in index.html
+//add nav bar and anything else you want to show on each page. add <ui-view> here as well. Add Main Container with view in it.
+
+//combine previous files from reddit-clone1 to part 2. make sure all script tags are linked up and theme/pages look as expected
+
+//check to make sure all your scripts/cdns/etc are pulling in by opening your index.html page, dev tools, then sources. will see list of all the folders of things you are connected to on the left! CDNS will not show up in folders but under them.
+
+//add wildcard route in app.js BENEATH any API routes!!!
+
+API routes
+app.use('/api/posts', require('./routes/posts'))
+app.use('/api/posts', require('./routes/comments'))
+
+*wildcard route to add*
+app.use('*', function(req, res, next) {
+  res.sendFile('index.html', {root: path.join(__dirname, 'public')})
+})
+
+//Node_modules - not usually made public by default so can add these lines of code instead of referring to node-Modules like reddit 1
+
+app.js
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, '/../', 'node_modules')))
+
+index.html --> Angular scripts
+<script src="/angular/angular.min.js"></script>
+<script src="/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+//get request to get posts in database
+- inject controller.$inject = ["$stateParams"] into component.js file for feature working on
+- in function Inonit, add vm.whatToGet = $stateParams.whatToGet
+- add $stateParams as argument to controller function()
+- add [ui-router] to dependency
+- add to app.config.js
+  $stateProvider
+      .state({
+        name: 'post',
+        url: '/',
+        component: 'post'
+      })
+- add featureName.component to .module("post.component")
+
+//add post-edit component and template
+
+
+//organize post into post-edit and post-list
+
+//////NOTES//////////
+//built in services are services that angular provides. services = extra functionality. Must require/inject these services to be able to use their functionality and features (similar to express = require('express')). $locationProvider = js window object/browser object
+
+//log service = will show custom logging in console based on what your objective is - it's cool!!!
