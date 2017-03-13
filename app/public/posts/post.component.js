@@ -20,8 +20,8 @@
       vm.showPostFormDiv = false;
       vm.submitNewPost = submitNewPost;
       vm.posts = [];
-      // vm.createComment = createComment;
       vm.showCommentForm = showCommentForm;
+      vm.createComment = createComment;
       // vm.setPropertyName = setPropertyName;
       // vm.increaseVote = increaseVote;
       // vm.decreaseVote = decreaseVote;
@@ -58,17 +58,19 @@
       }
 
       function showPostTemplate () {
-        vm.showPostFormDiv = !vm.showPostFormDiv
+        vm.showPostFormDiv = !vm.showPostFormDiv;
       }
 
-      // function createComment (post) {
-      //   post.comments.push(vm.newComment.body)
-      //   delete vm.newComment
-      // }
-      //
       function showCommentForm (thisPost) {
-        thisPost.showComment = !thisPost.showComment
+        thisPost.showComment = !thisPost.showComment;
       }
+
+      function createComment (post) {
+        post.comments.push(vm.newComment.body);
+        delete vm.newComment;
+        post.showComment = !post.showComment;
+      }
+
 
       // function setPropertyName(property) {
       //   vm.sort = property
