@@ -13,11 +13,3 @@
 main.container {
  margin-bottom: 4em;
 }
-
-.error {
- color: red;
-}
-
-.valid {
-  color: green;
-}

@@ -7,7 +7,7 @@
     .component('post', {
       controller: Controller,
       templateUrl: '/posts/post.template.html',
-      styleUrls: '/css/styles.css'
+      styleUrls: '/css/post.css'
     });
 
     Controller.$inject = ["$http"];

@@ -50,7 +50,7 @@
 <div class="row">
   <div class="col-md-8">
 
-    <form novalidate name = "$ctrl.newPostForm" ng-submit = "$ctrl.submitNewPost($ctrl.post.title, $ctrl.post.body, $ctrl.post.author, $ctrl.post.image_url)" ng-if="$ctrl.showPostFormDiv === true">
+    <form novalidate class = "form" name = "$ctrl.newPostForm" ng-submit = "$ctrl.submitNewPost($ctrl.post.title, $ctrl.post.body, $ctrl.post.author, $ctrl.post.image_url)" ng-if="$ctrl.showPostFormDiv === true">
 
       <div>
         <label for="title" ng-class = "{'error': $ctrl.newPostForm.title.$invalid && $ctrl.newPostForm.title.$touched}">Title</label>
