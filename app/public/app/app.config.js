@@ -1,12 +1,12 @@
 (function() {
-  'use strict'
-  console.log('Connected!')
+  'use strict';
+  // console.log('App Config Connected!');
 
   angular
     .module("app", ['ui.router' , 'post.component'])
-    .config(config)
+    .config(config);
 
-    config.$inject = ['$stateProvider' , '$urlRouterProvider' , '$locationProvider']
+    config.$inject = ['$stateProvider' , '$urlRouterProvider' , '$locationProvider'];
 
     function config ($stateProvider , $urlRouterProvider, $locationProvider) {
 
@@ -16,8 +16,7 @@
       .state({
         name: 'post',
         url: '/',
-        component: 'postArea'
-      })
-
-    };
+        component: 'post'
+      });
+    }
 }());

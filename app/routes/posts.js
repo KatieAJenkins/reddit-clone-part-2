@@ -1,3 +1,5 @@
+'use strict';
+
 const express = require('express')
 const router = express.Router()
 const knex = require('../db')
@@ -23,11 +25,11 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', validate, (req, res, next) => {
-  console.log(params(req));
+  console.log('params req ', params(req));
   knex('posts')
     .insert(params(req))
     .returning('*')
-    .then(posts => res.json(posts[0]))
+    .then(posts => res.send(posts[0]))
     .catch(err => next(err))
 })
 

@@ -14,6 +14,10 @@ main.container {
  margin-bottom: 4em;
 }
 
-.has-error {
+.error {
  color: red;
+}
+
+.valid {
+  color: green;
 }
