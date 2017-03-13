@@ -21,7 +21,7 @@
       vm.submitNewPost = submitNewPost;
       vm.posts = [];
       // vm.createComment = createComment;
-      // vm.showCommentForm = showCommentForm;
+      vm.showCommentForm = showCommentForm;
       // vm.setPropertyName = setPropertyName;
       // vm.increaseVote = increaseVote;
       // vm.decreaseVote = decreaseVote;
@@ -50,10 +50,8 @@
 
         $http.post('/api/posts', post)
           .then(response => {
-            // console.log("response data ", response.data);
             response.data.comments = [];
             vm.posts.push(response.data);
-            // vm.posts.push(post);
             delete vm.post;
             vm.showPostFormDiv = !vm.showPostFormDiv
         });
@@ -68,9 +66,9 @@
       //   delete vm.newComment
       // }
       //
-      // function showCommentForm (thisPost) {
-      //   thisPost.showComment = !thisPost.showComment
-      // }
+      function showCommentForm (thisPost) {
+        thisPost.showComment = !thisPost.showComment
+      }
 
       // function setPropertyName(property) {
       //   vm.sort = property
