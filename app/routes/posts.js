@@ -29,7 +29,9 @@ router.post('/', validate, (req, res, next) => {
   knex('posts')
     .insert(params(req))
     .returning('*')
-    .then(posts => res.send(posts[0]))
+    .then(posts =>
+      // console.log(res.send(posts[0])))
+      res.send(posts[0]))
     .catch(err => next(err))
 })
 

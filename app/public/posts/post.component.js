@@ -45,6 +45,9 @@
 
         console.log("new post ", post);
 
+        vm.newPostForm.$setPristine();
+        vm.newPostForm.$setUntouched();
+
         $http.post('/api/posts', post)
           .then(response => {
             console.log(response.data);
