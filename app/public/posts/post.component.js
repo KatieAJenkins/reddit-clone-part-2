@@ -55,6 +55,7 @@
             vm.posts.push(response.data);
             // vm.posts.push(post);
             delete vm.post;
+            vm.showPostFormDiv = !vm.showPostFormDiv
         });
       }
 
