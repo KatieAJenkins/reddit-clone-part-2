@@ -41,7 +41,7 @@
       function submitNewPost (title, body, author, image_url) {
 
         var created_at = new Date();
-        var post = {title: title, body: body, author: author, image_url: image_url, created_at: created_at};
+        var post = {title: title,  author: author, body: body, image_url: image_url, created_at: created_at};
 
         console.log("new post ", post);
 
@@ -50,8 +50,10 @@
 
         $http.post('/api/posts', post)
           .then(response => {
-            console.log(response.data);
-            vm.posts.push(post);
+            // console.log("response data ", response.data);
+            response.data.comments = [];
+            vm.posts.push(response.data);
+            // vm.posts.push(post);
             delete vm.post;
         });
       }
