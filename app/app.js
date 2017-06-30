@@ -18,7 +18,7 @@ const posts = require('./routes/posts')
 app.use('/api/posts', posts)
 
 //TODO work on comments
-app.use('/api/comments', require('./routes/comments'))
+// app.use('/api/comments', require('./routes/comments'))
 
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'public')})
@@ -33,7 +33,6 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}
-  console.log(err)
   res.status(err.status || 500)
   res.json(err)
 })

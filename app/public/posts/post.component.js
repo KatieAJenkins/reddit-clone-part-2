@@ -2,7 +2,8 @@
   'use strict';
 
   angular
-    .module("post.component" , ['angularMoment', 'ui.router'])
+    // .module("post.component" , ['angularMoment', 'ui.router'])
+    .module ("app")
 
     .component('post', {
       controller: Controller,
@@ -14,6 +15,7 @@
 
     function Controller ($http) {
       const vm = this;
+      vm.$onInit = onInit;
 
       vm.$onInit = onInit;
       vm.showPostTemplate = showPostTemplate;
@@ -22,15 +24,16 @@
       vm.posts = [];
       vm.showCommentForm = showCommentForm;
       vm.createComment = createComment;
-      // vm.setPropertyName = setPropertyName;
-      // vm.increaseVote = increaseVote;
-      // vm.decreaseVote = decreaseVote;
+      vm.newComment = {};
+      vm.setPropertyName = setPropertyName;
+      vm.increaseVote = increaseVote;
+      vm.decreaseVote = decreaseVote;
 
-      // vm.newComment = {};
 
       function onInit () {
-        // vm.sort = '-votes';
-        // vm.propertyName = 'Votes';
+        // console.log("post component loading");
+        vm.sort = '-votes';
+        vm.propertyName = 'Votes';
 
         $http.get('/api/posts')
           .then(results => {
@@ -66,28 +69,31 @@
       }
 
       function createComment (post) {
+        console.log(post);
         post.comments.push(vm.newComment.body);
+        console.log(vm.newComment.body);
+        console.log(vm.newComment);
         delete vm.newComment;
         post.showComment = !post.showComment;
       }
 
 
-      // function setPropertyName(property) {
-      //   vm.sort = property
-      //   if(property == '-votes') {
-      //     vm.propertyName = 'Votes'
-      //   }
-      //   else {
-      //     vm.propertyName = property.substring(0,1).toUpperCase() + property.substring(1).toLowerCase();
-      //   }
-      // }
-      //
-      // function increaseVote (thisPost) {
-      //   thisPost.votes += 1;
-      // }
-      //
-      // function decreaseVote (thisPost) {
-      //   thisPost.votes -= 1
-      // }
+      function setPropertyName(property) {
+        vm.sort = property
+        if(property == '-votes') {
+          vm.propertyName = 'Votes'
+        }
+        else {
+          vm.propertyName = property.substring(0,1).toUpperCase() + property.substring(1).toLowerCase();
+        }
+      }
+
+      function increaseVote (thisPost) {
+        thisPost.votes += 1;
+      }
+
+      function decreaseVote (thisPost) {
+        thisPost.votes -= 1
+      }
     } //end of controller
 }());//end of IIFE

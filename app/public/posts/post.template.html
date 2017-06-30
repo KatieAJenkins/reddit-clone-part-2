@@ -1,4 +1,4 @@
-<!-- <p>Testing: {{ $ctrl.working }}</p> -->
+<!-- <h1>Post Template Working</h1> -->
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
@@ -114,7 +114,7 @@
       </div>
     </form>
   </div>
-</div> <!-- end new post form-->
+</div>
 
 <!--New Post with Comments Section-->
     <div class="row">
@@ -156,10 +156,10 @@
                 <hr>
                 <p ng-repeat ="comment in post.comments">
                   {{comment}}
-                </p>
+                </p> -->
 
               <!--Comment Form-->
-                <form name = "newCommentForm" class="form-inline"     ng-submit="$ctrl.createComment(post)" >
+                <!-- <form name = "newCommentForm" class="form-inline"     ng-submit="$ctrl.createComment(post)" >
 
                   <div class="form-group">
                     <input id="comments"
@@ -178,7 +178,6 @@
             </div>
           </div>
         </div>
-
     </div>
-  </div> <!--end new post with comments section-->
+  </div>
 </main>
