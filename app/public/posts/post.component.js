@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    // .module("post.component" , ['angularMoment', 'ui.router'])
+    .module("post.component" , ['angularMoment', 'ui.router'])
     .module ("app")
 
     .component('post', {

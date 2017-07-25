@@ -37,10 +37,10 @@
 //       //   // vm.sort = '-votes';
 //       //   // vm.propertyName = 'Votes';
 //       //
-//       //   // $http.get('/api/posts')
-//       //   //   .then(results => {
-//       //   //     vm.posts = results.data;
-//       //   // });
+        $http.get('/api/posts')
+          .then(results => {
+            vm.posts = results.data;
+        });
 //       // }
 //
 //       // function submitNewPost (title, body, author, image_url) {

@@ -1,6 +1,6 @@
-// (function () {
-//  'use strict';
-//
-//  angular.module("app" , ['ui.router' , 'angularMoment']);
-//
-// }());
+(function () {
+ 'use strict';
+
+ angular.module("app" , ['ui.router' , 'angularMoment']);
+
+}());
